@@ -2,13 +2,14 @@
 import flask
 import json
 import mariadb
+import os
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 
 # configuration used to connect to MariaDB
 config = {
-            'host': '127.0.0.1',
+            'host': os.environ.get('IP_ADDR'),
             'port': 3306,
             'user': 'root',
             'password': 'Password123!',
