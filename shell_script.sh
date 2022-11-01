@@ -8,6 +8,6 @@ sleep 60
 mariadb_ip_addr=$(docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' rrp0019_mariadb_container)
 docker build -t rrp0019_flask_image ./flask_image/
 sleep 60
-docker run -p 127.0.0.1:5000:5000 --net=host -d -e IP_ADDR=$mariadb_ip_addr --name rrp0019_flask_container rrp0019_flask_image 
+docker run -p 127.0.0.1:5000:5000 -d -e IP_ADDR=$mariadb_ip_addr --name rrp0019_flask_container rrp0019_flask_image 
 sleep 60
 curl http://localhost:5000/api/people

@@ -35,4 +35,4 @@ def index():
     # return the results!
     return json.dumps(json_data)
 
-app.run()
+app.run(host='0.0.0.0')
