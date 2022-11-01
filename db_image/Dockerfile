@@ -1,5 +1,5 @@
 FROM mariadb
-LABEL description = "This is my mysql dockerfile"
+LABEL description = "This is my mariadb dockerfile"
 MAINTAINER Rajesh Patel rrp0019@auburn.edu 
 EXPOSE 3306
 ENV MARIADB_ROOT_PASSWORD=Password123!
